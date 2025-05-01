@@ -104,7 +104,7 @@ CREATE TABLE Table_Name (
 );
 ```
 
-*Question 1*
+### *Question 1*
 
 Write a SQL query to modify the Student_details table by adding a new column Email of type VARCHAR(50) and updating the column MARKS to have a default value of 0.
 
@@ -116,7 +116,7 @@ ALTER TABLE  Student_details ADD COLUMN MARKS DEFAULT '0';
 ![image](https://github.com/user-attachments/assets/a2ad517d-78c6-4489-9474-ae83f64e32ce)
 
 
-*Question 2*
+### *Question 2*
 
 Create a new table named contacts with the following specifications: contact_id as INTEGER and primary key. first_name as TEXT and not NULL. last_name as TEXT and not NULL. email as TEXT. phone as TEXT and not NULL with a check constraint to ensure the length of phone is at least 10 characters.
 
@@ -134,7 +134,7 @@ CHECK (LENGTH(phone)>=10)
 ![image](https://github.com/user-attachments/assets/4232e1e8-adc2-4bcc-aecc-6cb871978988)
 
 
-*Question 3*
+### *Question 3*
 
 Insert all books from Out_of_print_books into Books
 
@@ -163,7 +163,7 @@ DepartmentName TEXT);
 ### *Output:*
 ![image](https://github.com/user-attachments/assets/3c02ebb4-0350-4b0b-b74a-3611066239c4)
 
-*Question 5*
+### *Question 5*
 
 Write an SQL query to add two new columns, department_id and manager_id, to the table employee with datatype of INTEGER. The manager_id column should have a default value of NULL.
 
@@ -219,7 +219,7 @@ JoinDate DATE
 ![image](https://github.com/user-attachments/assets/0b0a2862-476c-4930-be64-9efc6e273acb)
 
 
-## *Question 9*
+### *Question 9*
 
 Write a SQL query to add birth_date attribute as timestamp (datatype) in the table customer 
 
