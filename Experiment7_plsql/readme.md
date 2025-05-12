@@ -108,7 +108,8 @@ Reversed number is 5351
 a = 10, b = 9, c = 15  
 Largest of three number is 15
 ### Output:
-![image](https://github.com/user-attachments/assets/daa9dadb-0109-4ea5-8503-32f0faf6a5a9)
+![image](https://github.com/user-attachments/assets/0f36fc5f-d114-4071-8733-3b3d39e80e97)
+
 
 ## RESULT
 Thus, the PL/SQL programs using variables, conditionals, and loops were executed successfully.
