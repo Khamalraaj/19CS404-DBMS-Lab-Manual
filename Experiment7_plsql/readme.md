@@ -33,9 +33,13 @@ END;
 - Declare two numeric variables and initialize them.
 - Use an `IF` statement to compare the values.
 - Display the greater number using `DBMS_OUTPUT.PUT_LINE`.
+### Program:
+![image](https://github.com/user-attachments/assets/e15d9465-0b21-468c-9ce8-9e2f88e9e0a2)
 
 **Expected Output:**  
 Greater number is: 80
+### Output:
+![image](https://github.com/user-attachments/assets/c02c8186-4e9d-44d8-bc1c-f675c606ef6c)
 
 ---
 
