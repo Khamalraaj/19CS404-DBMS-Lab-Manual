@@ -75,6 +75,8 @@ END;
 - Insert some sample data into the table.
 - Use a simple cursor to fetch and display employee names and designations.
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
+### Program:
+![image](https://github.com/user-attachments/assets/f36ccf19-13fa-4c47-a838-15ef09677e7f)
 
 **Output:**  
 The program should display the employee details or an error message.
