@@ -25,8 +25,7 @@ Types of Explicit Cursors:
 5. Cursor with FOR UPDATE: Used for row-level locking and updating the rows while looping.
 
 **Syntax:**
-```
-
+```sql
 DECLARE 
    <declarations section> 
 BEGIN 
@@ -34,7 +33,6 @@ BEGIN
 EXCEPTION 
    <exception handling> 
 END;
-
 ```
 
 ### Basic Components of PL/SQL Block:
@@ -53,8 +51,7 @@ PL/SQL provides a robust mechanism to handle runtime errors using exception hand
 - User-defined Exceptions: Declared explicitly in the declaration section using the EXCEPTION keyword.
 - WHEN OTHERS: A generic handler for all exceptions not handled explicitly.
 
-```
-
+```sql
 BEGIN
    -- Statements
 EXCEPTION
@@ -63,7 +60,6 @@ EXCEPTION
    WHEN OTHERS THEN
       -- Handling for unknown errors
 END;
-
 ```
 
 ### **Question 1: Simple Cursor with Exception Handling**
@@ -80,35 +76,34 @@ END;
 - Use a simple cursor to fetch and display employee names and designations.
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
 
-  # program
-  
-  ```
-  DECLARE
-    CURSOR emp_cur IS SELECT emp_name, designation FROM employees;
-    v_name employees.emp_name%TYPE;
-    v_desg employees.designation%TYPE;
+#### Program:
+```
+DECLARE
+   CURSOR emp_cur IS
+      SELECT emp_name, designation FROM employees;
+   v_name employees.emp_name%TYPE;
+   v_desg employees.designation%TYPE;
 BEGIN
-    OPEN emp_cur;
-    LOOP
-        FETCH emp_cur INTO v_name, v_desg;
-        EXIT WHEN emp_cur%NOTFOUND;
-        DBMS_OUTPUT.PUT_LINE('Name: ' || v_name || ', Designation: ' || v_desg);
-    END LOOP;
-    CLOSE emp_cur;
+   OPEN emp_cur;
+   LOOP
+      FETCH emp_cur INTO v_name, v_desg;
+      EXIT WHEN emp_cur%NOTFOUND;
+      DBMS_OUTPUT.PUT_LINE('Name: ' || v_name || ', Designation: ' || v_desg);
+   END LOOP;
+   CLOSE emp_cur;
 EXCEPTION
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
-
 ```
 
 **Output:**  
 The program should display the employee details or an error message.
 
-![image](https://github.com/user-attachments/assets/4a995846-da38-49ba-b9f6-f7bfbc1221e1)
+![image](https://github.com/user-attachments/assets/420e25ee-9a22-4def-945e-0494dee9aed2)
 
 
-
+---
 
 ### **Question 2: Parameterized Cursor with Exception Handling**
 
@@ -124,9 +119,9 @@ The program should display the employee details or an error message.
 - Use a parameterized cursor to accept a salary range as input and fetch employees within that range.
 - Implement exception handling to catch and display relevant error messages.
 
-  # program
-  ```
-  DECLARE
+#### Program:
+```
+DECLARE
    CURSOR sal_cursor(min_sal NUMBER, max_sal NUMBER) IS
       SELECT emp_name, salary FROM employees WHERE salary BETWEEN min_sal AND max_sal;
    v_name employees.emp_name%TYPE;
@@ -151,7 +146,7 @@ END;
 **Output:**  
 The program should display the employee details within the specified salary range or an error message if no data is found.
 
-![image](https://github.com/user-attachments/assets/18d764e0-f32a-46a6-9985-0eb300f8c736)
+![image](https://github.com/user-attachments/assets/61f49c12-dcc3-4712-a366-e917595623f0)
 
 
 ---
@@ -170,7 +165,7 @@ The program should display the employee details within the specified salary rang
 - Use a cursor FOR loop to fetch and display employee names along with their department numbers.
 - Implement exception handling to catch the relevant exceptions.
 
-# program
+#### Program:
 ```
 DECLARE
    found BOOLEAN := FALSE;
@@ -193,7 +188,7 @@ END;
 **Output:**  
 The program should display employee names with their department numbers or the appropriate error message if no data is found.
 
-![image](https://github.com/user-attachments/assets/21d72481-2198-4b42-a366-8a92c9130946)
+![image](https://github.com/user-attachments/assets/a208f8c1-0913-482c-a283-b586626e5140)
 
 
 ---
@@ -212,9 +207,9 @@ The program should display employee names with their department numbers or the a
 - Declare a cursor using `%ROWTYPE` to fetch complete rows from the `employees` table.
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
 
-  # program
-  ```
-  DECLARE
+#### Program:
+```
+DECLARE
    CURSOR emp_cur IS SELECT * FROM employees;
    emp_rec employees%ROWTYPE;
    found BOOLEAN := FALSE;
@@ -242,7 +237,7 @@ END;
 **Output:**  
 The program should display employee records or the appropriate error message if no data is found.
 
-![image](https://github.com/user-attachments/assets/3caa779f-47e5-4d0c-accf-871776a495c4)
+![image](https://github.com/user-attachments/assets/65664ead-e13d-4ad4-a9df-4e2bae9c8012)
 
 
 ---
@@ -261,8 +256,8 @@ The program should display employee records or the appropriate error message if 
 - Use a cursor with the `FOR UPDATE` clause to lock the rows of employees in a specific department and update their salary.
 - Implement exception handling to handle `NO_DATA_FOUND` or other errors that may occur.
 
-  # program
-  ```
+#### Program:
+```
 DECLARE
    CURSOR emp_cur IS
       SELECT emp_id, salary FROM employees WHERE dept_no = 10 FOR UPDATE;
@@ -288,7 +283,7 @@ END;
 **Output:**  
 The program should update employee salaries and display a message, or it should display an error message if no data is found.
 
-![image](https://github.com/user-attachments/assets/0e2a099a-26dd-4f88-878b-0451b573fde5)
+![image](https://github.com/user-attachments/assets/a3e41b43-317a-4ff1-ae8b-85f80a7ff8ad)
 
 
 ---
