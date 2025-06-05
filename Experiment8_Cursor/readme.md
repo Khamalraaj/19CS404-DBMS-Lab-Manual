@@ -82,7 +82,7 @@ END;
 
   # program
   
-  ``
+  ```
   DECLARE
     CURSOR emp_cur IS SELECT emp_name, designation FROM employees;
     v_name employees.emp_name%TYPE;
@@ -100,7 +100,7 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
 
-``
+```
 
 **Output:**  
 The program should display the employee details or an error message.
